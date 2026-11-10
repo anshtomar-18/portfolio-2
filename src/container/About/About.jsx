@@ -3,28 +3,35 @@ import { motion } from "framer-motion";
 import "./About.scss";
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
+
 function About() {
    const abouts = [
       {
-         title: "SWE Intern",
+         title: "Software Engineer",
          description:
-            "Working in a range of tech stacks of ReactJS in the front end, SpringBoot and Java in the back end, and Jenkins for CI/CD Pipelines.",
+            "Passionate developer building high-performance web and mobile platforms with Next.js, React.js, TypeScript, Tailwind CSS, Node.js, and Supabase.",
          imageUrl: images.about01,
       },
       {
-         title: "Full-Stack Developer",
+         title: "AI & Data Solutions",
          description:
-            "Love to juggle through code and structure which can give user a good experience while surfing.",
+            "Architecting intelligent applications using LLM API integrations, RAG pipelines, LangChain, vector databases (pgvector/Pinecone), and prompt engineering.",
          imageUrl: images.about02,
       },
-      
       {
-         title: "Tech Content Creator",
+         title: "Java Intern @ CantiLever",
          description:
-            "Helping people with problems I've personally faced in my journey is something I love to do",
+            "Developed full-featured banking systems with auth, deposits, and transaction histories, along with real-time socket chat applications using Java, JDBC, and MySQL.",
+         imageUrl: images.about03,
+      },
+      {
+         title: "Education & Achievements",
+         description:
+            "B.Tech in Information Technology at Maharaja Agrasen Institute of Technology (8.8 CGPA). Smart India Hackathon Finalist & Deloitte Analytics Certified.",
          imageUrl: images.about04,
       },
    ];
+
    return (
       <>
          <h2 className="head-text">
@@ -40,7 +47,7 @@ function About() {
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.5, type: "tween" }}
                >
-                  <img src={about.imageUrl} alt={about.title}></img>
+                  <img src={about.imageUrl} alt={about.title} />
                   <h2 className="bold-text" style={{ marginTop: 20 }}>
                      {about.title}
                   </h2>

@@ -1,22 +1,28 @@
 .app {
-   background-color: var(--primary-color);
+   background-color: var(--bg-primary);
+   color: var(--black-color);
    font-family: var(--font-base);
 }
 
 .app__whitebg {
-   background-color: var(--white-color);
+   background-color: var(--bg-secondary);
+   border-top: 1px solid var(--border-subtle);
+   border-bottom: 1px solid var(--border-subtle);
 }
 
 .app__primarybg {
-   background-color: var(--primary-color);
+   background-color: var(--bg-primary);
 }
 
 .app__container {
    width: 100%;
    min-height: 100vh;
+   scroll-snap-align: start;
+   scroll-snap-stop: normal;
 
    display: flex;
    flex-direction: row;
+   position: relative;
 }
 
 .app__flex {
@@ -29,7 +35,7 @@
    flex: 1;
    width: 100%;
    flex-direction: column;
-   padding: 4rem 2rem;
+   padding: 5rem 2rem 4rem;
 
    @media screen and (max-width: 450px) {
       padding: 4rem 1rem 2rem;
@@ -38,7 +44,7 @@
 
 .copyright {
    width: 100%;
-   padding: 2rem 0 0;
+   padding: 2.5rem 0 0;
 
    display: flex;
    flex-direction: column;
@@ -47,7 +53,9 @@
 
    p {
       text-transform: uppercase;
-      color: var(--black-color);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--gray-color);
    }
 }
 
@@ -55,11 +63,15 @@
    font-size: 2.75rem;
    font-weight: 800;
    text-align: center;
-   color: var(--black-color);
+   color: #ffffff;
    text-transform: capitalize;
+   letter-spacing: -0.02em;
+   text-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
 
    span {
-      color: var(--secondary-color);
+      background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
    }
 
    @media screen and (min-width: 2000px) {
@@ -72,10 +84,10 @@
 }
 
 .p-text {
-   font-size: 0.8rem;
+   font-size: 0.85rem;
    text-align: left;
    color: var(--gray-color);
-   line-height: 1.5;
+   line-height: 1.6;
 
    @media screen and (min-width: 2000px) {
       font-size: 1.75rem;
@@ -83,17 +95,18 @@
 }
 
 .bold-text {
-   font-size: 1rem;
-   font-weight: 800;
-   color: var(--black-color);
+   font-size: 1.05rem;
+   font-weight: 700;
+   color: #ffffff;
    text-align: left;
+   letter-spacing: -0.01em;
 
    @media screen and (min-width: 2000px) {
       font-size: 2rem;
    }
 
    @media screen and (max-width: 450px) {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
    }
 }
 
@@ -102,41 +115,45 @@
    justify-content: flex-end;
    align-items: center;
    flex-direction: column;
-
    padding: 1rem;
+   z-index: 10;
 
    div {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      background-color: var(--white-color);
-      margin: 0.25rem 0;
-      border: 1px solid var(--lightGray-color);
+      background: rgba(22, 22, 28, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      margin: 0.35rem 0;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
       display: flex;
       justify-content: center;
       align-items: center;
-
-      transition: all 0.3s ease-in-out;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 
       svg {
-         width: 15px;
-         height: 15px;
-         color: var(--gray-color);
+         width: 16px;
+         height: 16px;
+         color: rgba(255, 255, 255, 0.7);
+         transition: color 0.3s ease;
       }
 
       &:hover {
          background-color: var(--secondary-color);
-         border-color: var(--secondary-color);
+         border-color: #818cf8;
+         transform: translateY(-2px) scale(1.08);
+         box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
 
          svg {
-            color: var(--white-color);
+            color: #ffffff;
          }
       }
 
       @media screen and (min-width: 2000px) {
          width: 70px;
          height: 70px;
-
          margin: 0.5rem 0;
 
          svg {
@@ -152,20 +169,22 @@
    justify-content: center;
    align-items: center;
    flex-direction: column;
-
    padding: 1rem;
+   z-index: 10;
 
    .app__navigation-dot {
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background-color: #cbcbcb;
+      background-color: rgba(255, 255, 255, 0.22);
       margin: 0.5rem;
-
-      transition: background-color 0.2s ease-in-out;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.25s ease-in-out;
 
       &:hover {
          background-color: var(--secondary-color);
+         box-shadow: 0 0 10px rgba(99, 102, 241, 0.8);
+         transform: scale(1.3);
       }
 
       @media screen and (min-width: 2000px) {

@@ -48,7 +48,9 @@ import medium from "../assets/medium.png";
 import topmate from "../assets/topmate.jpeg";
 import bracket from "../assets/Bracket.gif";
 import viber from "../assets/viber.gif";
-export default {
+import heroPortrait from "../assets/hero-portrait.jpg";
+
+const images = {
    bracket,
    viber,
    topmate,
@@ -100,4 +102,7 @@ export default {
    tailwind,
    reactNative,
    medium,
+   heroPortrait,
 };
+
+export default images;

@@ -1,60 +1,55 @@
-import { React, useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { images } from "../../constants";
 import "./Contact.scss";
 
 function Contact() {
-
    return (
       <>
          <h2 className="head-text">Let's Connect!!</h2>
          <div className="app__footer-cards">
             <div className="app__footer-card">
-               <img src={images.email} />
-               <a href="mailto:tanishakayadav2110@gmail.com" className="p-text">
-                  Email
+               <img src={images.email} alt="email" />
+               <a href="mailto:somanyridhima41@gmail.com" className="p-text">
+                  somanyridhima41@gmail.com
                </a>
             </div>
-            
+
             <div className="app__footer-card">
-            
-               <img src={images.twitter} />
-               <a href="https://twitter.com/tanishka__yadav" className="p-text">
-               Twitter
+               <img src={images.mobile} alt="phone" />
+               <a href="tel:+917027211978" className="p-text">
+                  +91 7027211978
                </a>
             </div>
+
             <div className="app__footer-card">
-               <img src={images.linkedln} />
+               <img src={images.linkedln} alt="linkedin" />
                <a
-                  href="https://www.linkedin.com/in/tanishkayadav/"
+                  href="https://www.linkedin.com/in/ridima-somany-745303405/"
+                  target="_blank"
+                  rel="noreferrer"
                   className="p-text"
                >
-                  Linkedln
+                  LinkedIn
                </a>
             </div>
+
             <div className="app__footer-card">
-               <img src={images.github} />
-               <a href="https://github.com/Tanishka-dev" className="p-text">
-                 GitHub
-               </a>
-            </div>
-            <div className="app__footer-card">
-               <img src={images.medium} />
-               <a href="https://medium.com/@tanishka_yadav" className="p-text">
-                  Medium
-               </a>
-            </div>
-            <div className="app__footer-card">
-               <img src={images.topmate} />
-               <a href="https://topmate.io/tanishkayadav" className="p-text">
-                  Topmate Mentorship
+               <img src={images.github} alt="github" />
+               <a
+                  href="https://github.com/somanyridhima41-ux"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-text"
+               >
+                  GitHub
                </a>
             </div>
          </div>
       </>
    );
 }
+
 export default AppWrap(
    MotionWrap(Contact, "app__footer"),
    "contact",

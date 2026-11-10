@@ -1,18 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 import "./Navbar.scss";
-import { images } from "../../constants";
+
+const navItems = ["home", "about", "work", "skills", "certifications", "contact"];
+
 function Navbar() {
    const [toggle, setToggle] = useState(false);
+   const [scrolled, setScrolled] = useState(false);
+
+   useEffect(() => {
+      const handleScroll = () => {
+         if (window.scrollY > 60) {
+            setScrolled(true);
+         } else {
+            setScrolled(false);
+         }
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+   }, []);
 
    return (
-      <nav className="app__navbar">
+      <nav className={`app__navbar ${scrolled ? "app__navbar--scrolled" : ""}`}>
          <div className="app__navbar-logo">
-            <img src={images.logo1} alt="logo" />
+            <a href="#home" className="app__navbar-brand" aria-label="Ridima Somany">
+               <span className="brand-highlight">R</span>IDIMA
+               <span className="brand-sub"> SOMANY</span>
+            </a>
          </div>
          <ul className="app__navbar-links">
-            {["home", "about", "work", "skills", "contact"].map((item) => (
+            {navItems.map((item) => (
                <li key={`link-${item}`} className="app__flex p-text">
                   <div />
                   <a href={`#${item}`}>{item}</a>
@@ -28,18 +47,16 @@ function Navbar() {
                >
                   <HiX onClick={() => setToggle(false)} />
                   <ul>
-                     {["home", "about", "contact", "skills", "work"].map(
-                        (item) => (
-                           <li key={item}>
-                              <a
-                                 href={`#${item}`}
-                                 onClick={() => setToggle(false)}
-                              >
-                                 {item}
-                              </a>
-                           </li>
-                        )
-                     )}
+                     {navItems.map((item) => (
+                        <li key={item}>
+                           <a
+                              href={`#${item}`}
+                              onClick={() => setToggle(false)}
+                           >
+                              {item}
+                           </a>
+                        </li>
+                     ))}
                   </ul>
                </motion.div>
             )}

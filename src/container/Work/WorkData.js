@@ -1,42 +1,38 @@
 import { images } from "../../constants";
+
 const works = [
    {
-      title: " Tesla-Ecommerce",
-      description: "A fullstack webite with a modern UI",
-      codeLink: "https://github.com/Tanishka-dev/Tesla-Ecommerce-Redux",
-      projectLink: "https://tesla-ecommerce.netlify.app/",
-      imageUrl: images.tesla,
-      
+      title: "SwasthyaSathi-AI",
+      description:
+         "Privacy-first health app that analyzes real-time weather and AQI data to deliver personalized health risk alerts and preventive recommendations.",
+      codeLink: "https://github.com/somanyridhima41-ux",
+      projectLink: "https://github.com/somanyridhima41-ux",
+      imageUrl: images.gossip,
    },
    {
-      title: "Uber Clone",
-      description: "A mobile application built in React Native",
-      codeLink: "https://github.com/Tanishka-dev/Uber-Clone-React-Native",
-      projectLink:
-         "https://expo.dev/@tanishka_yadav/clone-uber?serviceType=classic&distribution=expo-go",
-      imageUrl: images.uber,
-      
-   },
-   {
-      title: "Bracket App",
-      description: "A social media app",
-      codeLink: "https://github.com/Tanishka-dev/Bracket-SMA-Reactjs",
-      projectLink:
-         "https://bracket-social.netlify.app/",
+      title: "margdarshak-ai",
+      description:
+         "Multilingual career counselling platform for MSDE that helps learners and parents evaluate NSQF vocational trades using verified career outcomes.",
+      codeLink: "https://github.com/somanyridhima41-ux",
+      projectLink: "https://github.com/somanyridhima41-ux",
       imageUrl: images.bracket,
-      
    },
    {
-      title: "Viber App",
-      description: "A chat app",
-      codeLink: "https://github.com/Tanishka-dev/Viber-Chat-App-Reactjs",
-      projectLink:
-         "https://viber-chat-app-reactjs.vercel.app/",
-      imageUrl: images.viber,
-      
+      title: "SwasthyaSathi-Android",
+      description:
+         "Native Android application providing personalized environmental health alerts, symptom guidance, and SOS assistance using weather and AQI data.",
+      codeLink: "https://github.com/somanyridhima41-ux",
+      projectLink: "https://github.com/somanyridhima41-ux",
+      imageUrl: images.uber,
    },
-   
-   
+   {
+      title: "CantiLever Banking & Chat",
+      description:
+         "Java-based Banking System with user authentication, deposits, withdrawals, fund transfers, and real-time socket communication.",
+      codeLink: "https://github.com/somanyridhima41-ux",
+      projectLink: "https://github.com/somanyridhima41-ux",
+      imageUrl: images.viber,
+   },
 ];
 
 export default works;

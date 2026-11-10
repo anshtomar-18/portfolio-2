@@ -1,24 +1,14 @@
-import { React, useState, useEffect } from "react";
-import RaectTooltip from "react-tooltip";
+import React from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { images } from "../../constants";
 import "./Skills.scss";
+
 function Skills() {
    const skills = [
       {
-         name: "HTML",
-         icon: images.html,
-         bgColor: "#edf2f8",
-      },
-      {
-         name: "CSS",
-         icon: images.css,
-         bgColor: "#313bac",
-      },
-      {
-         name: "Sass",
-         icon: images.sass,
+         name: "TypeScript",
+         icon: images.typescript,
          bgColor: "#313bac",
       },
       {
@@ -27,27 +17,12 @@ function Skills() {
          bgColor: "#edf2f8",
       },
       {
-         name: "TypeScript",
-         icon: images.typescript,
-         bgColor: "#313bac",
-      },
-      {
-         name: "Reactjs",
+         name: "React.js",
          icon: images.react,
          bgColor: "#edf2f8",
       },
       {
-         name: "React Native",
-         icon: images.reactNative,
-         bgColor: "#6b7688",
-      },
-      {
-         name: "Redux",
-         icon: images.redux,
-         bgColor: "#edf2f8",
-      },
-      {
-         name: "Nextjs",
+         name: "Next.js",
          icon: images.nextjs,
          bgColor: "#46364a",
       },
@@ -57,8 +32,13 @@ function Skills() {
          bgColor: "#6b7688",
       },
       {
-         name: "Firebase",
-         icon: images.firebase,
+         name: "Node.js",
+         icon: images.node,
+         bgColor: "#edf2f8",
+      },
+      {
+         name: "Python",
+         icon: images.python,
          bgColor: "#edf2f8",
       },
       {
@@ -72,11 +52,37 @@ function Skills() {
          bgColor: "#edf2f8",
       },
       {
-         name: "Technical Writer",
-         icon: images.writer,
-         bgColor: "#46364a",
+         name: "GraphQL",
+         icon: images.graphql,
+         bgColor: "#edf2f8",
+      },
+      {
+         name: "Redux",
+         icon: images.redux,
+         bgColor: "#edf2f8",
+      },
+      {
+         name: "Git / GitHub",
+         icon: images.git,
+         bgColor: "#6b7688",
+      },
+      {
+         name: "Firebase",
+         icon: images.firebase,
+         bgColor: "#edf2f8",
+      },
+      {
+         name: "HTML5",
+         icon: images.html,
+         bgColor: "#edf2f8",
+      },
+      {
+         name: "CSS3",
+         icon: images.css,
+         bgColor: "#313bac",
       },
    ];
+
    return (
       <>
          <h2 className="head-text">Skills</h2>
@@ -93,7 +99,7 @@ function Skills() {
                         className="app__flex"
                         style={{ backgroundColor: skill.bgColor }}
                      >
-                        <img src={skill.icon} alt="skill" />
+                        <img src={skill.icon} alt={skill.name} />
                      </div>
                      <p className="p-text">{skill.name}</p>
                   </motion.div>

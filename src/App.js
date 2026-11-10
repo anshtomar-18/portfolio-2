@@ -1,17 +1,19 @@
 import React from "react";
-import { About, Header, Work, Skills, Contact, Testimonial } from "./container";
-import { Navbar } from "./components";
+import { About, Header, Work, Skills, Certifications, Contact } from "./container";
+import { Navbar, Preloader } from "./components";
 import "./App.scss";
+
 function App() {
    return (
       <div className="app">
-         
+         <Preloader />
          <Navbar />
          <Header />
-         <Contact />
-         <About />        
+         <About />
          <Work />
-         <Skills />         
+         <Skills />
+         <Certifications />
+         <Contact />
       </div>
    );
 }

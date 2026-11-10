@@ -1,9 +1,8 @@
-import { React, useState, useEffect } from "react";
+import React from "react";
 import "./Work.scss";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
-import { images } from "../../constants";
 import works from "./WorkData";
 
 function Work() {
@@ -22,20 +21,21 @@ function Work() {
             {works.map((work, index) => (
                <div className="app__work-item app-flex" key={index}>
                   <div className="app__work-img app-flex">
-                     <img src={work.imageUrl} alt="work"></img>
+                     <img src={work.imageUrl} alt={work.title} />
                      <motion.div
                         className="app__work-hover app-flex"
                         whileHover={{ opacity: [1, 1] }}
                         transition={{
                            duration: 0.25,
-                           ease: " easeInOut",
+                           ease: "easeInOut",
                            staggerChildren: 0.5,
                         }}
                      >
                         <a
                            href={work.projectLink}
-                           target="blank"
+                           target="_blank"
                            rel="noreferrer"
+                           aria-label="View Project"
                         >
                            <motion.div
                               whileInView={{ scale: [0, 1] }}
@@ -46,7 +46,12 @@ function Work() {
                               <AiFillEye />
                            </motion.div>
                         </a>
-                        <a href={work.codeLink} target="blank" rel="noreferrer">
+                        <a
+                           href={work.codeLink}
+                           target="_blank"
+                           rel="noreferrer"
+                           aria-label="View Code"
+                        >
                            <motion.div
                               whileInView={{ scale: [0, 1] }}
                               whileHover={{ scale: [1, 0.4] }}
@@ -63,7 +68,6 @@ function Work() {
                      <p className="p-text" style={{ marginTop: 10 }}>
                         {work.description}
                      </p>
-                     
                   </div>
                </div>
             ))}
